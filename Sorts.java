@@ -29,23 +29,14 @@ public class Sorts{
     }
   }
   public static void insertionSort(int[] ary){
-    ArrayList<Integer> nums = new ArrayList<Integer>();
-    for(int l = 0; l < ary.length; l++){
-      nums.add(ary[l]);
-    }
-    for(int i = 1; i < nums.size(); i++){
-      int current = nums.remove(i);
-      for(int j = i - 1; j > 0; j--){
-        if(current > nums.get(j)){
-          nums.add(j + 1, current);
-        }
-        if(current < nums.get(0)){
-          nums.add(0, current);
-        }
+    for(int i = 1; i < ary.length; i++){
+      int current = ary[i];
+      int c = i - 1;
+      while(c > 0 && current < c){
+        ary[c] = ary[c - 1];
+        ary[c - 1] = current;
+        c--;
       }
-    }
-    for(int k = 0; k < ary.length; k++){
-      ary[k] = nums.get(k);
     }
   }
 
