@@ -32,7 +32,7 @@ public class Sorts{
     for(int i = 1; i < ary.length; i++){
       int current = ary[i];
       int c = i - 1;
-      while(c > 0 && current < c){
+      while(c > 0 && current < ary[c]){
         ary[c] = ary[c - 1];
         ary[c - 1] = current;
         c--;
